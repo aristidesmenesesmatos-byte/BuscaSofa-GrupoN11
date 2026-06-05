@@ -1,0 +1,1068 @@
+
+
+DevTools listening on ws://127.0.0.1:64859/devtools/browser/4767d1fa-d69f-483c-961e-23d18f23e128
+(node:21008) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("file%3A///C%3A/Users/cheo0/AppData/Local/Cypress/Cache/14.3.3/Cypress/resources/app/node_modules/ts-node/esm/transpile-only.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:21008) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Warning: We failed to trash the existing run results.
+
+This error will not affect or change the exit code.
+
+Error: Command failed: C:\Users\cheo0\AppData\Local\Cypress\Cache\14.3.3\Cypress\resources\app\node_modules\trash\lib\win-trash.exe C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\features
+
+    at genericNodeError (node:internal/errors:984:15)
+    at wrappedFn (node:internal/errors:538:14)
+    at ChildProcess.exithandler (node:child_process:422:12)
+    at ChildProcess.emit (node:events:518:28)
+    at maybeClose (node:internal/child_process:1104:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:304:5)
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        14.3.3                                                                         │
+  │ Browser:        Electron 130 (headless)                                                        │
+  │ Node Version:   v24.11.1 (C:\Program Files\nodejs\node.exe)                                    │
+  │ Specs:          25 found (fuel_prices.cy.js, header.cy.js, home.cy.js, 1-getting-started/todo. │
+  │                 cy.js, 2-advanced-examples/actions.cy.js, 2-advanced-examples/aliasing.cy.js,  │
+  │                 2-advanced-examples/assertions.cy.js, 2-advanced-examples/connectors.cy.js, 2- │
+  │                 advanced-examples/cooki...)                                                    │
+  │ Searched:       cypress/e2e/**/*.cy.{js,jsx,ts,tsx}, cypress/e2e/features/*.feature            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  fuel_prices.cy.js                                                              (1 of 25)
+
+
+  Visualización de precios de combustibles en gasolineras españolas
+    (Attempt 1 of 3) El usuario ve el componente de precios de combustibles
+    √ El usuario ve el componente de precios de combustibles (4270ms)
+    √ La aplicación muestra una tabla con los precios de varias gasolineras (8067ms)
+    √ La aplicación muestra un mensaje de error si la API falla (843ms)
+    √ El usuario puede ver el nombre, dirección, municipio y precios de cada gasolinera (7856ms)
+    √ El usuario ve un mensaje de "Cargando precios..." mientras se descargan los datos (12741ms)
+
+
+  5 passing (39s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     39 seconds                                                                       │
+  │ Spec Ran:     fuel_prices.cy.js                                                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\fuel_     (1280x720)
+     prices.cy.js\Visualización de precios de combustibles en gasolineras españolas -               
+     - El usuario ve el componente de precios de combustibles (failed).png                          
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  header.cy.js                                                                   (2 of 25)
+
+
+  Visualización del header de la aplicación
+    (Attempt 1 of 3) El usuario ve un enlace a la página de información
+    (Attempt 2 of 3) El usuario ve un enlace a la página de información
+    1) El usuario ve un enlace a la página de información
+    √ El usuario ve un enlace al buscador (384ms)
+    √ El usuario ve un enlace al mapa (391ms)
+    √ El usuario ve un enlace a la página de registro (360ms)
+    √ El usuario ve un enlace a la página de login (346ms)
+
+
+  4 passing (15s)
+  1 failing
+
+  1) Visualización del header de la aplicación
+       El usuario ve un enlace a la página de información:
+     AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Quienes somos' within the element: <a.about> but never did.
+      at Context.eval (http://localhost:5173/__cypress/tests?p=cypress\e2e\header.cy.js:8:83)
+
+
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      4                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  3                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     15 seconds                                                                       │
+  │ Spec Ran:     header.cy.js                                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\heade     (1280x720)
+     r.cy.js\Visualización del header de la aplicación -- El usuario ve un enlace a l               
+     a página de información (failed).png                                                           
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\heade     (1280x720)
+     r.cy.js\Visualización del header de la aplicación -- El usuario ve un enlace a l               
+     a página de información (failed) (attempt 2).png                                               
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\heade     (1280x720)
+     r.cy.js\Visualización del header de la aplicación -- El usuario ve un enlace a l               
+     a página de información (failed) (attempt 3).png                                               
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  home.cy.js                                                                     (3 of 25)
+
+
+  Visualización de la home de la aplicación
+    √ El title de la web es Buscasofa (550ms)
+    (Attempt 1 of 3) El usuario ve el título de la aplicación
+    √ El usuario ve el título de la aplicación (4239ms)
+    √ El usuaro ve la descripción de la aplicación en la home (3823ms)
+    √ El usuaro ve una sección con el resumen de precios a nivel nacional (4009ms)
+    √ El usuaro ve una sección con el resumen de precios por comunidad autónoma (4105ms)
+
+
+  5 passing (22s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     21 seconds                                                                       │
+  │ Spec Ran:     home.cy.js                                                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\home.     (1280x720)
+     cy.js\Visualización de la home de la aplicación -- El usuario ve el título de la               
+      aplicación (failed).png                                                                       
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  1-getting-started/todo.cy.js                                                   (4 of 25)
+
+
+  example to-do app
+    √ displays two todo items by default (789ms)
+    √ can add new todo items (422ms)
+    √ can check off an item as completed (216ms)
+    with a checked task
+      √ can filter for uncompleted tasks (292ms)
+      √ can filter for completed tasks (284ms)
+      √ can delete all completed tasks (279ms)
+
+
+  6 passing (4s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        6                                                                                │
+  │ Passing:      6                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     1-getting-started/todo.cy.js                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/actions.cy.js                                              (5 of 25)
+
+
+  Actions
+    √ .type() - type into a DOM element (4043ms)
+    √ .focus() - focus on a DOM element (199ms)
+    √ .blur() - blur off a DOM element (487ms)
+    √ .clear() - clears an input or textarea element (572ms)
+    √ .submit() - submit a form (414ms)
+    √ .click() - click on a DOM element (2114ms)
+    √ .dblclick() - double click on a DOM element (209ms)
+    √ .rightclick() - right click on a DOM element (211ms)
+    √ .check() - check a checkbox or radio element (842ms)
+    √ .uncheck() - uncheck a checkbox element (878ms)
+    √ .select() - select an option in a <select> element (968ms)
+    √ .scrollIntoView() - scroll an element into view (165ms)
+    √ .trigger() - trigger an event on a DOM element (152ms)
+    √ cy.scrollTo() - scroll the window or element to a position (2146ms)
+
+
+  14 passing (15s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        14                                                                               │
+  │ Passing:      14                                                                               │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     15 seconds                                                                       │
+  │ Spec Ran:     2-advanced-examples/actions.cy.js                                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/aliasing.cy.js                                             (6 of 25)
+
+
+  Aliasing
+    √ .as() - alias a DOM element for later use (404ms)
+    √ .as() - alias a route for later use (977ms)
+
+
+  2 passing (3s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     3 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/aliasing.cy.js                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/assertions.cy.js                                           (7 of 25)
+
+
+  Assertions
+    Implicit Assertions
+      √ .should() - make an assertion about the current subject (424ms)
+      √ .and() - chain multiple assertions together (182ms)
+    Explicit Assertions
+      √ expect - make an assertion about a specified subject (119ms)
+      √ pass your own callback function to should() (119ms)
+      √ finds element by class name regex (120ms)
+      √ can throw any error (114ms)
+      √ matches unknown text between two elements (140ms)
+      √ assert - assert shape of an object (103ms)
+      √ retries the should callback until assertions pass (1596ms)
+
+
+  9 passing (5s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        9                                                                                │
+  │ Passing:      9                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/assertions.cy.js                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/connectors.cy.js                                           (8 of 25)
+
+
+  Connectors
+    √ .each() - iterate over an array of elements (289ms)
+    √ .its() - get properties on the current subject (124ms)
+    √ .invoke() - invoke a function on the current subject (127ms)
+    √ .spread() - spread an array as individual args to callback function (114ms)
+    .then()
+      √ invokes a callback function with the current subject (118ms)
+      √ yields the returned value to the next command (104ms)
+      √ yields the original subject without return (116ms)
+      √ yields the value yielded by the last Cypress command inside (108ms)
+
+
+  8 passing (3s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        8                                                                                │
+  │ Passing:      8                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     2 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/connectors.cy.js                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/cookies.cy.js                                              (9 of 25)
+
+
+  Cookies
+    √ cy.getCookie() - get a browser cookie (414ms)
+    √ cy.getCookies() - get browser cookies for the current domain (214ms)
+    √ cy.getAllCookies() - get all browser cookies (150ms)
+    √ cy.setCookie() - set a browser cookie (133ms)
+    √ cy.clearCookie() - clear a browser cookie (217ms)
+    √ cy.clearCookies() - clear browser cookies for the current domain (214ms)
+    √ cy.clearAllCookies() - clear all browser cookies (148ms)
+
+
+  7 passing (3s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        7                                                                                │
+  │ Passing:      7                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     3 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/cookies.cy.js                                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/files.cy.js                                               (10 of 25)
+
+
+  Files
+    √ cy.fixture() - load a fixture (446ms)
+    √ cy.fixture() or require - load a fixture (132ms)
+    √ cy.readFile() - read file contents (120ms)
+    √ cy.writeFile() - write to a file (298ms)
+
+
+  4 passing (3s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      4                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     2 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/files.cy.js                                                  │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/location.cy.js                                            (11 of 25)
+
+
+  Location
+    √ cy.hash() - get the current URL hash (345ms)
+    √ cy.location() - get window.location (114ms)
+    √ cy.url() - get the current URL (98ms)
+
+
+  3 passing (2s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     2 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/location.cy.js                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/misc.cy.js                                                (12 of 25)
+
+
+  Misc
+    √ cy.exec() - execute a system command (542ms)
+    √ cy.focused() - get the DOM element that has focus (300ms)
+    √ cy.wrap() - wrap an object (166ms)
+    Cypress.Screenshot
+      √ cy.screenshot() - take a screenshot (1064ms)
+      √ Cypress.Screenshot.defaults() - change default config of screenshots (93ms)
+
+
+  5 passing (4s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     3 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/misc.cy.js                                                   │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\2-adv    (1000x1853)
+     anced-examples\misc.cy.js\my-image (3).png                                                     
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/navigation.cy.js                                          (13 of 25)
+
+
+  Navigation
+    √ cy.go() - go back or forward in the browser's history (1147ms)
+    √ cy.reload() - reload the page (457ms)
+    √ cy.visit() - visit a remote url (381ms)
+
+
+  3 passing (4s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     3 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/navigation.cy.js                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/network_requests.cy.js                                    (14 of 25)
+
+
+  Network Requests
+    √ cy.request() - make an XHR request (665ms)
+    √ cy.request() - verify response using BDD syntax (334ms)
+    √ cy.request() with query parameters (320ms)
+    √ cy.request() - pass result to the second request (383ms)
+    √ cy.request() - save response in the shared test context (453ms)
+    √ cy.intercept() - route responses to matching requests (893ms)
+
+
+  6 passing (5s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        6                                                                                │
+  │ Passing:      6                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/network_requests.cy.js                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/querying.cy.js                                            (15 of 25)
+
+
+  Querying
+    √ cy.get() - query DOM elements (321ms)
+    √ cy.contains() - query DOM elements with matching content (145ms)
+    √ .within() - query DOM elements within a specific element (129ms)
+    √ cy.root() - query the root DOM element (122ms)
+    √ best practices - selecting elements (656ms)
+
+
+  5 passing (3s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     3 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/querying.cy.js                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/spies_stubs_clocks.cy.js                                  (16 of 25)
+
+
+  Spies, Stubs, and Clock
+    √ cy.spy() - wrap a method in a spy (252ms)
+    √ cy.spy() retries until assertions pass (2549ms)
+    √ cy.stub() - create a stub and/or replace a function with stub (104ms)
+    √ cy.clock() - control time in the browser (274ms)
+    √ cy.tick() - move time in the browser (363ms)
+    √ cy.stub() matches depending on arguments (24ms)
+    √ matches call arguments using Sinon matchers (33ms)
+
+
+  7 passing (5s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        7                                                                                │
+  │ Passing:      7                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     5 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/spies_stubs_clocks.cy.js                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/storage.cy.js                                             (17 of 25)
+
+
+  Local Storage / Session Storage
+    √ cy.clearLocalStorage() - clear all data in localStorage for the current origin (582ms)
+    √ cy.getAllLocalStorage() - get all data in localStorage for all origins (224ms)
+    √ cy.clearAllLocalStorage() - clear all data in localStorage for all origins (188ms)
+    √ cy.getAllSessionStorage() - get all data in sessionStorage for all origins (187ms)
+    √ cy.clearAllSessionStorage() - clear all data in sessionStorage for all origins (205ms)
+
+
+  5 passing (3s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     2 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/storage.cy.js                                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/traversal.cy.js                                           (18 of 25)
+
+
+  Traversal
+    √ .children() - get child DOM elements (308ms)
+    √ .closest() - get closest ancestor DOM element (117ms)
+    √ .eq() - get a DOM element at a specific index (133ms)
+    √ .filter() - get DOM elements that match the selector (125ms)
+    √ .find() - get descendant DOM elements of the selector (136ms)
+    √ .first() - get first DOM element (118ms)
+    √ .last() - get last DOM element (109ms)
+    √ .next() - get next sibling DOM element (126ms)
+    √ .nextAll() - get all next sibling DOM elements (122ms)
+    √ .nextUntil() - get next sibling DOM elements until next el (126ms)
+    √ .not() - remove DOM elements from set of DOM elements (120ms)
+    √ .parent() - get parent DOM element from DOM elements (109ms)
+    √ .parents() - get parent DOM elements from DOM elements (112ms)
+    √ .parentsUntil() - get parent DOM elements from DOM elements until el (124ms)
+    √ .prev() - get previous sibling DOM element (122ms)
+    √ .prevAll() - get all previous sibling DOM elements (126ms)
+    √ .prevUntil() - get all previous sibling DOM elements until el (113ms)
+    √ .siblings() - get all sibling DOM elements (109ms)
+
+
+  18 passing (4s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        18                                                                               │
+  │ Passing:      18                                                                               │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/traversal.cy.js                                              │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/utilities.cy.js                                           (19 of 25)
+
+
+  Utilities
+    √ Cypress._ - call a lodash method (457ms)
+    √ Cypress.$ - call a jQuery method (210ms)
+    √ Cypress.Blob - blob utilities and base64 string conversion (497ms)
+    √ Cypress.minimatch - test out glob patterns against strings (97ms)
+    √ Cypress.Promise - instantiate a bluebird promise (1112ms)
+
+
+  5 passing (4s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     3 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/utilities.cy.js                                              │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/viewport.cy.js                                            (20 of 25)
+
+
+  Viewport
+    √ cy.viewport() - set the viewport size and dimension (2950ms)
+
+
+  1 passing (5s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/viewport.cy.js                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/waiting.cy.js                                             (21 of 25)
+
+
+  Waiting
+    √ cy.wait() - wait for a specific amount of time (4632ms)
+    √ cy.wait() - wait for a specific route (291ms)
+
+
+  2 passing (7s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     6 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/waiting.cy.js                                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  2-advanced-examples/window.cy.js                                              (22 of 25)
+
+
+  Window
+    √ cy.window() - get the global window object (381ms)
+    √ cy.document() - get the document object (103ms)
+    √ cy.title() - get the title (92ms)
+
+
+  3 passing (2s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     2 seconds                                                                        │
+  │ Spec Ran:     2-advanced-examples/window.cy.js                                                 │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  features/header.feature                                                       (23 of 25)
+
+
+  Header
+    (Attempt 1 of 3) El usuario no autenticado ve todos los elementos del Header
+    (Attempt 2 of 3) El usuario no autenticado ve todos los elementos del Header
+    1) El usuario no autenticado ve todos los elementos del Header
+
+
+  0 passing (14s)
+  1 failing
+
+  1) Header
+       El usuario no autenticado ve todos los elementos del Header:
+     AssertionError: Timed out retrying after 4000ms: expected '<a.about>' to contain 'Quienes somos'
+      at Context.eval (http://localhost:5173/__cypress/tests?p=cypress\e2e\features\header.feature:13980:48)
+      at Registry.runStepDefininition (http://localhost:5173/__cypress/tests?p=cypress\e2e\features\header.feature:10415:48)
+      at Object.fn (http://localhost:5173/__cypress/tests?p=cypress\e2e\features\header.feature:13369:43)
+      at runStepWithLogGroup (http://localhost:5173/__cypress/tests?p=cypress\e2e\features\header.feature:12856:29)
+      at Context.eval (http://localhost:5173/__cypress/tests?p=cypress\e2e\features\header.feature:13365:62)
+      at getRet (http://localhost:5173/__cypress/runner/cypress_runner.js:119616:20)
+      at tryCatcher (http://localhost:5173/__cypress/runner/cypress_runner.js:1777:23)
+      at Promise.attempt.Promise.try (http://localhost:5173/__cypress/runner/cypress_runner.js:4285:29)
+      at Context.thenFn (http://localhost:5173/__cypress/runner/cypress_runner.js:119627:66)
+
+
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  3                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     13 seconds                                                                       │
+  │ Spec Ran:     features/header.feature                                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\featu     (1280x720)
+     res\header.feature\Header -- El usuario no autenticado ve todos los elementos de               
+     l Header (failed) (2).png                                                                      
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\featu     (1280x720)
+     res\header.feature\Header -- El usuario no autenticado ve todos los elementos de               
+     l Header (failed) (attempt 2) (2).png                                                          
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\featu     (1280x720)
+     res\header.feature\Header -- El usuario no autenticado ve todos los elementos de               
+     l Header (failed) (attempt 3) (2).png                                                          
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  features/notfound.feature                                                     (24 of 25)
+
+
+  Página no encontrada
+    (Attempt 1 of 3) El usuario visita una ruta inexistente
+    (Attempt 2 of 3) El usuario visita una ruta inexistente
+    1) El usuario visita una ruta inexistente
+
+
+  0 passing (13s)
+  1 failing
+
+  1) Página no encontrada
+       El usuario visita una ruta inexistente:
+     AssertionError: Timed out retrying after 4000ms: Expected to find content: 'No hemos encontrado la página que buscas' but never did.
+      at Context.eval (http://localhost:5173/__cypress/tests?p=cypress\e2e\features\notfound.feature:13971:29)
+      at Registry.runStepDefininition (http://localhost:5173/__cypress/tests?p=cypress\e2e\features\notfound.feature:10415:48)
+      at Object.fn (http://localhost:5173/__cypress/tests?p=cypress\e2e\features\notfound.feature:13369:43)
+      at runStepWithLogGroup (http://localhost:5173/__cypress/tests?p=cypress\e2e\features\notfound.feature:12856:29)
+      at Context.eval (http://localhost:5173/__cypress/tests?p=cypress\e2e\features\notfound.feature:13365:62)
+      at getRet (http://localhost:5173/__cypress/runner/cypress_runner.js:119616:20)
+      at tryCatcher (http://localhost:5173/__cypress/runner/cypress_runner.js:1777:23)
+      at Promise.attempt.Promise.try (http://localhost:5173/__cypress/runner/cypress_runner.js:4285:29)
+      at Context.thenFn (http://localhost:5173/__cypress/runner/cypress_runner.js:119627:66)
+
+
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  3                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     13 seconds                                                                       │
+  │ Spec Ran:     features/notfound.feature                                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\featu     (1280x720)
+     res\notfound.feature\Página no encontrada -- El usuario visita una ruta inexiste               
+     nte (failed) (2).png                                                                           
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\featu     (1280x720)
+     res\notfound.feature\Página no encontrada -- El usuario visita una ruta inexiste               
+     nte (failed) (attempt 2) (2).png                                                               
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\featu     (1280x720)
+     res\notfound.feature\Página no encontrada -- El usuario visita una ruta inexiste               
+     nte (failed) (attempt 3) (2).png                                                               
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  features/users.feature                                                        (25 of 25)
+
+
+  Registro y Login de usuario
+    (Attempt 1 of 3) Registro exitoso de un nuevo usuario
+    (Attempt 2 of 3) Registro exitoso de un nuevo usuario
+    1) Registro exitoso de un nuevo usuario
+    (Attempt 1 of 3) Login exitoso de un usuario registrado
+    (Attempt 2 of 3) Login exitoso de un usuario registrado
+    2) Login exitoso de un usuario registrado
+
+
+  0 passing (37s)
+  2 failing
+
+  1) Registro y Login de usuario
+       Registro exitoso de un nuevo usuario:
+     TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.
+
+  > Failed to fetch
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+      at handleSubmit (http://localhost:5173/src/components/Register.jsx:28:23)
+      at executeDispatch (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:11736:11)
+      at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:1485:72)
+      at processDispatchQueue (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:11772:37)
+      at <unknown> (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:12182:11)
+      at batchedUpdates$1 (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:2628:42)
+      at dispatchEventForPluginEventSystem (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:11877:9)
+      at dispatchEvent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:14792:13)
+      at dispatchDiscreteEvent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:14773:62)
+      at Context.submit (http://localhost:5173/__cypress/runner/cypress_runner.js:115282:31)
+
+  2) Registro y Login de usuario
+       Login exitoso de un usuario registrado:
+     TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.
+
+  > Failed to fetch
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+      at handleSubmit (http://localhost:5173/src/components/Login.jsx:28:23)
+      at executeDispatch (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:11736:11)
+      at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:1485:72)
+      at processDispatchQueue (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:11772:37)
+      at <unknown> (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:12182:11)
+      at batchedUpdates$1 (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:2628:42)
+      at dispatchEventForPluginEventSystem (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:11877:9)
+      at dispatchEvent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:14792:13)
+      at dispatchDiscreteEvent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=997414eb:14773:62)
+      at Context.submit (http://localhost:5173/__cypress/runner/cypress_runner.js:115282:31)
+
+
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      2                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  6                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     36 seconds                                                                       │
+  │ Spec Ran:     features/users.feature                                                           │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\featu     (1280x720)
+     res\users.feature\Registro y Login de usuario -- Registro exitoso de un nuevo us               
+     uario (failed) (2).png                                                                         
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\featu     (1280x720)
+     res\users.feature\Registro y Login de usuario -- Registro exitoso de un nuevo us               
+     uario (failed) (attempt 2) (2).png                                                             
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\featu     (1280x720)
+     res\users.feature\Registro y Login de usuario -- Registro exitoso de un nuevo us               
+     uario (failed) (attempt 3) (2).png                                                             
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\featu     (1280x720)
+     res\users.feature\Registro y Login de usuario -- Login exitoso de un usuario reg               
+     istrado (failed) (2).png                                                                       
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\featu     (1280x720)
+     res\users.feature\Registro y Login de usuario -- Login exitoso de un usuario reg               
+     istrado (failed) (attempt 2) (2).png                                                           
+  -  C:\Users\cheo0\Downloads\buscasofa-main\buscasofa-main\cypress\screenshots\featu     (1280x720)
+     res\users.feature\Registro y Login de usuario -- Login exitoso de un usuario reg               
+     istrado (failed) (attempt 3) (2).png                                                           
+
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ √  fuel_prices.cy.js                        00:39        5        5        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ×  header.cy.js                             00:15        5        4        1        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  home.cy.js                               00:21        5        5        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  1-getting-started/todo.cy.js             00:04        6        6        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/actions.cy.js        00:15       14       14        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/aliasing.cy.js       00:03        2        2        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/assertions.cy.j      00:04        9        9        -        -        - │
+  │    s                                                                                           │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/connectors.cy.j      00:02        8        8        -        -        - │
+  │    s                                                                                           │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/cookies.cy.js        00:03        7        7        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/files.cy.js          00:02        4        4        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/location.cy.js       00:02        3        3        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/misc.cy.js           00:03        5        5        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/navigation.cy.j      00:03        3        3        -        -        - │
+  │    s                                                                                           │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/network_request      00:04        6        6        -        -        - │
+  │    s.cy.js                                                                                     │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/querying.cy.js       00:03        5        5        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/spies_stubs_clo      00:05        7        7        -        -        - │
+  │    cks.cy.js                                                                                   │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/storage.cy.js        00:02        5        5        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/traversal.cy.js      00:04       18       18        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/utilities.cy.js      00:03        5        5        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/viewport.cy.js       00:04        1        1        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/waiting.cy.js        00:06        2        2        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ √  2-advanced-examples/window.cy.js         00:02        3        3        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ×  features/header.feature                  00:13        1        -        1        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ×  features/notfound.feature                00:13        1        -        1        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ×  features/users.feature                   00:36        2        -        2        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ×  4 of 25 failed (16%)                     03:43      132      127        5        -        -  
+
