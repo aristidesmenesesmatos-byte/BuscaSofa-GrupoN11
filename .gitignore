@@ -28,6 +28,13 @@ Thumbs.db
 *.sln
 *.sw?
 
+# Metadatos locales (No subir al repo compartido)
+/openspec/
+/rune/
+/specs/
+/closeout_checklist.md
+/Memoria_BuscaSofa.md
+
 # ==========================================
 # RESTRICCIÓN DE IA: NO SUBIR AL COMPARTIDO
 # ==========================================
