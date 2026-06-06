@@ -2,7 +2,6 @@ ACTIVIDAD GRUPAL - GRUPO N11
 
 Integrantes:
 
-* Manuel Martínez López
 * Cristina García Gómez-Pastrana
 * Aristides Jose Meneses Matos
 * Francisco Javier Gumiel Espinosa
