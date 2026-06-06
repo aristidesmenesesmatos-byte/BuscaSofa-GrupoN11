@@ -12,7 +12,6 @@ function About() {
             <h2>Miembros del equipo:</h2>
 
             <ul>
-                <li>Manuel Martínez López</li>
                 <li>Cristina García Gómez-Pastrana</li>
                 <li>Aristides Jose Meneses Matos</li>
                 <li>Francisco Javier Gumiel Espinosa</li>
