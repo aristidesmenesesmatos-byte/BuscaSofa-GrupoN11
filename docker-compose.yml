@@ -1,0 +1,50 @@
+services:
+
+  # Ejecuta setup.sh
+  setup:
+    image: bash:latest
+    container_name: buscasofa-setup
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    command: bash setup.sh
+    restart: "no"
+
+  # Backend
+  backend:
+    build:
+      context: .
+      dockerfile: buscasofa-server-main/Dockerfile
+    container_name: buscasofa-backend
+    ports:
+      - "4000:4000"
+    volumes:
+      - sqlite-data:/data
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      setup:
+        condition: service_completed_successfully
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"require('http').get('http://localhost:4000/api/comments/test', r => process.exit(r.statusCode < 500 ? 0 : 1)).on('error', () => process.exit(0))\""]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # Frontend
+  frontend:
+    build:
+      context: .
+      dockerfile: buscasofa-main/Dockerfile
+    container_name: buscasofa-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  sqlite-data:
