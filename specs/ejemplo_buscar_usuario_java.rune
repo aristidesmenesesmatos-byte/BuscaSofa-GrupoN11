@@ -1,0 +1,28 @@
+﻿RUNE: buscar_usuario_por_id
+
+SIGNATURE: |
+  public Optional<Usuario> buscarUsuarioPorId(Long id)
+
+INTENT: |
+  Busca un usuario en la base de datos por su ID.
+  Devuelve Optional.empty() si no existe. Lanza excepcion si el ID es nulo.
+
+BEHAVIOR:
+  - WHEN id es null THEN throw IllegalArgumentException("El ID no puede ser nulo")
+  - WHEN id <= 0 THEN throw IllegalArgumentException("El ID debe ser positivo")
+  - WHEN el usuario existe en BD THEN return Optional.of(usuario)
+  - WHEN el usuario no existe THEN return Optional.empty()
+
+TESTS:
+  - "buscarUsuarioPorId(1L) == Optional.of(usuarioConId1)"
+  - "buscarUsuarioPorId(999L) == Optional.empty()"
+  - "buscarUsuarioPorId(null) throws IllegalArgumentException"
+  - "buscarUsuarioPorId(-5L) throws IllegalArgumentException"
+  - "buscarUsuarioPorId(0L) throws IllegalArgumentException"
+
+CONSTRAINTS:
+  - "Usa el repositorio JPA, no queries nativas"
+  - "No cachear resultados (la BD es fuente de verdad)"
+
+DEPENDENCIES:
+  - "spring-boot-starter-data-jpa >= 3.0"

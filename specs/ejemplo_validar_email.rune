@@ -1,0 +1,31 @@
+﻿RUNE: validar_email
+
+SIGNATURE: |
+  function validarEmail(email: string): { valido: boolean; error?: string }
+
+INTENT: |
+  Valida que un email tiene formato correcto y dominio permitido.
+  Los dominios permitidos son: empresa.com, empresa.es, correo.empresa.com.
+
+BEHAVIOR:
+  - WHEN email esta vacio THEN return { valido: false, error: "El email es obligatorio" }
+  - WHEN email no contiene exactamente un "@" THEN return { valido: false, error: "Formato invalido" }
+  - WHEN la parte local (antes de @) tiene menos de 1 caracter THEN return { valido: false, error: "Formato invalido" }
+  - WHEN el dominio no esta en la lista de permitidos THEN return { valido: false, error: "Dominio no autorizado" }
+  - OTHERWISE return { valido: true }
+
+TESTS:
+  - 'validarEmail("ana@empresa.com") == { valido: true }'
+  - 'validarEmail("pedro@empresa.es") == { valido: true }'
+  - 'validarEmail("") == { valido: false, error: "El email es obligatorio" }'
+  - 'validarEmail("sinArroba") == { valido: false, error: "Formato invalido" }'
+  - 'validarEmail("ana@gmail.com") == { valido: false, error: "Dominio no autorizado" }'
+  - 'validarEmail("@empresa.com") == { valido: false, error: "Formato invalido" }'
+
+EDGE_CASES:
+  - "Email con espacios: se recortan (trim) antes de validar"
+  - "Email con mayusculas: se pasa a minusculas antes de validar"
+
+CONSTRAINTS:
+  - "Longitud maxima del email: 254 caracteres"
+  - "Dominios permitidos configurables, no hardcodeados"

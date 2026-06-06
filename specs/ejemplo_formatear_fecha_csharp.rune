@@ -1,0 +1,28 @@
+﻿RUNE: formatear_fecha_es
+
+SIGNATURE: |
+  public static string FormatearFechaES(DateTime? fecha, string formatoSalida = "dd/MM/yyyy")
+
+INTENT: |
+  Formatea una fecha nullable a string en formato espanol.
+  Si la fecha es null, devuelve cadena vacia. Soporta formatos personalizados.
+
+BEHAVIOR:
+  - WHEN fecha es null THEN return ""
+  - WHEN formatoSalida esta vacio o es null THEN usar "dd/MM/yyyy" por defecto
+  - OTHERWISE return fecha.Value.ToString(formatoSalida, CultureInfo("es-ES"))
+
+TESTS:
+  - "FormatearFechaES(new DateTime(2025, 1, 15)) == '15/01/2025'"
+  - "FormatearFechaES(new DateTime(2025, 3, 5), 'dd-MM-yyyy') == '05-03-2025'"
+  - "FormatearFechaES(null) == ''"
+  - "FormatearFechaES(new DateTime(2025, 12, 31), 'yyyy/MM/dd') == '2025/12/31'"
+  - "FormatearFechaES(new DateTime(2025, 1, 1), '') == '01/01/2025'"
+
+EDGE_CASES:
+  - "DateTime.MinValue: se formatea como '01/01/0001' (no es null, se formatea)"
+  - "Formato invalido: deja que DateTime.ToString lance FormatException"
+
+CONSTRAINTS:
+  - "Siempre usar CultureInfo es-ES para separadores y nombres de meses"
+  - "No lanzar excepciones propias, dejar que el framework las maneje"

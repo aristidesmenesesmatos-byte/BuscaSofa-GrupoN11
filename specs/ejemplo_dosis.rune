@@ -1,0 +1,19 @@
+RUNE: calculo_dosis
+
+SIGNATURE: |
+  def calcular_dosis(peso_kg: float, mg_por_kg: float) -> float
+
+INTENT: |
+  Calcula la dosis total de un medicamento basada en el peso del paciente.
+  La función debe redondear el resultado a dos decimales.
+
+BEHAVIOR:
+  - WHEN peso_kg <= 0 THEN raise ValueError("El peso debe ser mayor a 0")
+  - WHEN mg_por_kg <= 0 THEN raise ValueError("La dosis debe ser mayor a 0")
+  - OTHERWISE return round(peso_kg * mg_por_kg, 2)
+
+TESTS:
+  - "calcular_dosis(70.5, 10.0) == 705.0"
+  - "calcular_dosis(10.33, 5.5) == 56.81"
+  - "calcular_dosis(0, 10) raises ValueError"
+  - "calcular_dosis(50, -5) raises ValueError"

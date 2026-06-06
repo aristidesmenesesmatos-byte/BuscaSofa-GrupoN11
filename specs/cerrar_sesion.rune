@@ -1,0 +1,44 @@
+---
+meta:
+  name: cerrarSesion
+  language: javascript
+  version: 1.0
+  tags: [buscasofa, autenticacion, tdd]
+---
+
+RUNE: cerrarSesion
+
+SIGNATURE: |
+  function cerrarSesion(storage, actualizarUsuario)
+
+INTENT: |
+  Cierra la sesion local eliminando la credencial persistida y notificando a la
+  interfaz que ya no existe un usuario autenticado.
+
+BEHAVIOR:
+  - WHEN storage is null or actualizarUsuario is not a function THEN raise TypeError("dependencias de sesion invalidas")
+  - WHEN storage contains token THEN remove only token and call actualizarUsuario(null)
+  - WHEN storage does not contain token THEN call actualizarUsuario(null) without error
+
+CONSTRAINTS:
+  - "storage: implementa la interfaz Storage."
+  - "actualizarUsuario: es una funcion."
+  - "No realiza llamadas de red."
+  - "No elimina la cache buscasofaData ni otras claves."
+  - "La operacion es idempotente."
+
+EDGE_CASES:
+  - "Cerrar sesion dos veces consecutivas no produce error."
+
+TESTS:
+  - "cerrarSesion(null, actualizarUsuario) raises TypeError"
+  - "cerrarSesion(storageWithToken, actualizarUsuario) == removes token and calls actualizarUsuario(null)"
+  - "cerrarSesion(storageWithTokenAndCache, actualizarUsuario) == preserves buscasofaData"
+  - "cerrarSesion(emptyStorage, actualizarUsuario) == calls actualizarUsuario(null) without throwing"
+  - "cerrarSesion(storageAfterLogout, actualizarUsuario) == calls actualizarUsuario(null) without throwing"
+
+DEPENDENCIES: []
+
+COMPLEXITY:
+  time: O(1)
+  space: O(1)

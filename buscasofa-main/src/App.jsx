@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchFuelPrices } from './apis/fuelApiLib';
 import { FuelApi } from './apis/FuelApi';
+import { cerrarSesion } from './auth/cerrarSesion';
 
 import Header from './components/Header';
 import FuelMap from './components/FuelMap';
@@ -31,6 +32,10 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const handleLogout = () => {
+    cerrarSesion(localStorage, setUser);
+  };
+
   useEffect(() => {
     fetchFuelPrices()
       .then(data => {
@@ -46,7 +51,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header user={user} />
+      <Header user={user} onLogout={handleLogout} />
 
       {loading && <div className="loading">Cargando...</div>}
 
