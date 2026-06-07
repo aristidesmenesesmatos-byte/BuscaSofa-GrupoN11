@@ -9,17 +9,5 @@ export default defineConfig({
     },
   },
   plugins: [react()],
-  server: {
-    host: '0.0.0.0',  // Necesario para que Docker exponga el servidor
-    port: 5173,
-    proxy: {
-      // Redirige /api/* al backend dentro de la red Docker
-      // Así el frontend no necesita llamar a http://localhost:4000
-      '/api': {
-        target: 'http://backend:4000',
-        changeOrigin: true,
-      },
-    },
-  },
   // base: '/buscasofa/',  // Descomenta solo si despliegas en subruta
 })
