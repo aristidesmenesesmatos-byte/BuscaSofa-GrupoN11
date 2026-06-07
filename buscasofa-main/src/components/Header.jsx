@@ -43,7 +43,7 @@ function Header({ user, onLogout }) {
                     {user && (
                         <>
                             <span style={{ marginRight: '1rem' }}>
-                                Bienvenido, {user}
+                                Bienvenido, <Link to="/perfil">{user}</Link>
                             </span>
                             <button onClick={handleLogout}>Cerrar sesión</button>
                         </>
