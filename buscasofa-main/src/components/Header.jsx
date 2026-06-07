@@ -4,9 +4,9 @@ import logo from '../assets/logo.png';
 
 import './Header.css';
 
-function Header({ user }) {
+function Header({ user, onLogout }) {
     const handleLogout = () => {
-        console.log('Cerrar sesión');
+        if (onLogout) onLogout();
     };
 
     return (
@@ -43,7 +43,7 @@ function Header({ user }) {
                     {user && (
                         <>
                             <span style={{ marginRight: '1rem' }}>
-                                Bienvenido, <Link to="/perfil">{user}</Link>
+                                Bienvenido, {user}
                             </span>
                             <button onClick={handleLogout}>Cerrar sesión</button>
                         </>
