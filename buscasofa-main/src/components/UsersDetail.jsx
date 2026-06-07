@@ -1,8 +1,9 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './UsersDetail.css';
 
-function UsersDetail({ user }) {
+function UsersDetail() {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -14,7 +15,10 @@ function UsersDetail({ user }) {
   // Extraer user_id del JWT token
   const getUserIdFromToken = () => {
     const token = localStorage.getItem('token');
-    if (!token) return null;
+    if (!token) {
+      console.log('No token found in localStorage');
+      return null;
+  }
     
     try {
       const parts = token.split('.');
@@ -42,13 +46,15 @@ function UsersDetail({ user }) {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch(`/api/users/${userId}`, {
+        const res = await fetch(`http://localhost:4000/api/users/${userId}`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
           }
         });
+
+        console.log('Fetch user data response:', res);
 
         if (!res.ok) {
           if (res.status === 404) {
@@ -65,6 +71,7 @@ function UsersDetail({ user }) {
         }
 
         const data = await res.json();
+        console.log('User data:', data);
         if (data && data.length > 0) {
           setUserData(data[0]);
           setEditForm({ username: data[0].username, email: data[0].email });
@@ -108,7 +115,7 @@ function UsersDetail({ user }) {
 
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`/api/users/${userId}`, {
+      const res = await fetch(`http://localhost:4000/api/users/${userId}`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -143,7 +150,7 @@ function UsersDetail({ user }) {
 
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`/api/users/${userId}`, {
+      const res = await fetch(`http://localhost:4000/api/users/${userId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
