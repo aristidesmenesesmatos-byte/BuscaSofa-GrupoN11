@@ -137,4 +137,130 @@ app.get('/api/comments/:station_id', (req, res) => {
     );
 });
 
+// Obtener detalle del usuario
+app.get('/api/users/:user_id', (req, res) => {
+    const token = req.headers.authorization?.split(' ')[1];
+    
+    if (!token) {
+        return res.status(401).json({ message: 'Token requerido' });
+    }
+
+    let payload;
+    try {
+        payload = jwt.verify(token, SECRET);
+    } catch {
+        return res.status(401).json({ message: 'Token inválido' });
+    }
+    if (payload.id !== Number(req.params.user_id)) {
+        return res.status(404).json({ message: 'Usuario no encontrado' });
+    }
+
+    db.all(
+        'SELECT username, email FROM users WHERE id = ? ORDER BY created_at DESC',
+        [req.params.user_id],
+        (err, rows) => {
+            if (err) return res.status(500).json({ message: 'Error al obtener detalle del usuario', error: err.message });
+            res.json(rows);
+        }
+    );
+});
+
+app.patch('/api/users/:user_id', (req, res) => {
+    const token = req.headers.authorization?.split(' ')[1];
+    const { username, email } = req.body;
+
+    if (!token) {
+        return res.status(401).json({ message: 'Token requerido' });
+    }
+
+    if (!username && !email) {
+        return res.status(400).json({ message: 'Debe proporcionar username y/o email para actualizar' });
+    }
+
+    let payload;
+    try {
+        payload = jwt.verify(token, SECRET);
+    } catch {
+        return res.status(401).json({ message: 'Token inválido' });
+    }
+
+    if (payload.id !== Number(req.params.user_id)) {
+        return res.status(404).json({ message: 'Usuario no encontrado' });
+    }
+
+    // Verificar que username o email no existan en otros usuarios
+    if (username || email) {
+        const query = username && email 
+            ? 'SELECT id FROM users WHERE (username = ? OR email = ?) AND id != ?'
+            : username
+            ? 'SELECT id FROM users WHERE username = ? AND id != ?'
+            : 'SELECT id FROM users WHERE email = ? AND id != ?';
+        
+        const params = username && email
+            ? [username, email, req.params.user_id]
+            : username
+            ? [username, req.params.user_id]
+            : [email, req.params.user_id];
+
+        db.get(query, params, (err, row) => {
+            if (err) return res.status(500).json({ message: 'Error en el servidor', error: err.message });
+            if (row) return res.status(409).json({ message: 'Usuario o email ya existe' });
+
+            // Proceder con la actualización
+            let updateQuery = 'UPDATE users SET ';
+            const updateParams = [];
+
+            if (username) {
+                updateQuery += 'username = ?';
+                updateParams.push(username);
+            }
+
+            if (email) {
+                if (username) updateQuery += ', ';
+                updateQuery += 'email = ?';
+                updateParams.push(email);
+            }
+
+            updateQuery += ' WHERE id = ?';
+            updateParams.push(req.params.user_id);
+
+            db.run(updateQuery, updateParams, function (err) {
+                if (err) return res.status(500).json({ message: 'Error al actualizar usuario', error: err.message });
+                res.json({ message: 'Usuario actualizado correctamente' });
+            });
+        });
+    }
+});
+
+// Eliminar usuario
+app.delete('/api/users/:user_id', (req, res) => {
+    const token = req.headers.authorization?.split(' ')[1];
+
+    if (!token) {
+        return res.status(401).json({ message: 'Token requerido' });
+    }
+
+    let payload;
+    try {
+        payload = jwt.verify(token, SECRET);
+    } catch {
+        return res.status(401).json({ message: 'Token inválido' });
+    }
+
+    if (payload.id !== Number(req.params.user_id)) {
+        return res.status(404).json({ message: 'Usuario no encontrado' });
+    }
+
+    // Eliminar comentarios del usuario primero (integridad referencial)
+    db.run('DELETE FROM comments WHERE user_id = ?', [req.params.user_id], (err) => {
+        if (err) return res.status(500).json({ message: 'Error al eliminar comentarios', error: err.message });
+
+        // Luego eliminar el usuario
+        db.run('DELETE FROM users WHERE id = ?', [req.params.user_id], function (err) {
+            if (err) return res.status(500).json({ message: 'Error al eliminar usuario', error: err.message });
+            res.json({ message: 'Usuario eliminado correctamente' });
+        });
+    });
+});
+
 app.listen(4000, () => console.log('Servidor backend (SQLite) en http://localhost:4000'));
