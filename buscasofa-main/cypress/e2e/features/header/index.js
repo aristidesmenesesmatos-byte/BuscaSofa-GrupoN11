@@ -2,6 +2,10 @@
 import { Given, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 Given('el usuario navega a la home', () => {
+  // Interceptamos la API del ministerio para que la app no se quede en "Cargando..."
+  cy.intercept('GET', '**/EstacionesTerrestres/**', {
+    body: { ListaEESSPrecio: [] }
+  });
   cy.visit('/');
 });
 

@@ -19,6 +19,10 @@ module.exports = defineConfig({
       'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
       'cypress/e2e/features/*.feature',
     ],
+    excludeSpecPattern: [
+      'cypress/e2e/1-getting-started/**',
+      'cypress/e2e/2-advanced-examples/**',
+    ],
     baseUrl: 'http://localhost:5173/',
     async setupNodeEvents(on, config) {
       // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
