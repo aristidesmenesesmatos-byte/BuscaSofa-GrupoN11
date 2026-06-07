@@ -10,7 +10,19 @@ let user;
 
 Given('el usuario navega a la página de registro', () => {
   user = randomUser();
-  cy.visit('/registro').wait(5000);
+
+  // Simulamos la API del backend para que no falle por "Failed to fetch"
+  cy.intercept('POST', '**/api/register', {
+    statusCode: 200,
+    body: { message: 'Usuario registrado correctamente' }
+  });
+
+  // Interceptamos la API del ministerio para que la app cargue
+  cy.intercept('GET', '**/EstacionesTerrestres/**', {
+    body: { ListaEESSPrecio: [] }
+  });
+
+  cy.visit('/registro');
 });
 
 When('completa el formulario de registro con datos válidos', () => {
@@ -28,6 +40,17 @@ Then('ve un mensaje de confirmación de registro', () => {
 });
 
 Given('el usuario navega a la página de login', () => {
+  // Simulamos la API del backend
+  cy.intercept('POST', '**/api/login', {
+    statusCode: 200,
+    body: { username: user.username, token: 'fake-token-123' }
+  });
+
+  // Interceptamos la API del ministerio
+  cy.intercept('GET', '**/EstacionesTerrestres/**', {
+    body: { ListaEESSPrecio: [] }
+  });
+
   cy.visit('/login');
 });
 

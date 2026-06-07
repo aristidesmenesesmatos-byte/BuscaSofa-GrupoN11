@@ -3,6 +3,10 @@
 
 describe('Visualización del header de la aplicación', () => {
     beforeEach(() => {
+        // Interceptamos la API del ministerio para que la app no se quede en "Cargando..."
+        cy.intercept('GET', '**/EstacionesTerrestres/**', {
+            body: { ListaEESSPrecio: [] }
+        });
         cy.visit('/');
     });
 
