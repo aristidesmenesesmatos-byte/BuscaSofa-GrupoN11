@@ -14,6 +14,7 @@ import StationDetail from './components/StationDetail';
 import FuelTable from './components/FuelTable';
 import Register from './components/Register';
 import Login from './components/Login';
+import UsersDetail from './components/UsersDetail';
 import Footer from './components/Footer';
 
 function NotFound() {
@@ -56,6 +57,7 @@ function App() {
         <Routes>
           <Route path="/registro" element={<Register />} />
           <Route path="/login" element={<Login onLogin={setUser} />} />
+          <Route path="/perfil" element={<UsersDetail user={user} />} />
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Home stations={stations} />} />
           <Route path="/mapa" element={<FuelMap stations={stations} />} />
