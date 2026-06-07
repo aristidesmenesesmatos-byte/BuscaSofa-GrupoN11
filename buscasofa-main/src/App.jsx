@@ -57,7 +57,7 @@ function App() {
         <Routes>
           <Route path="/registro" element={<Register />} />
           <Route path="/login" element={<Login onLogin={setUser} />} />
-          <Route path="/perfil" element={<UsersDetail user={user} />} />
+          <Route path="/perfil" element={<UsersDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Home stations={stations} />} />
           <Route path="/mapa" element={<FuelMap stations={stations} />} />
